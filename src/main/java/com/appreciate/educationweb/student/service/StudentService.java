@@ -54,7 +54,7 @@ public class StudentService {
     }
 
 
-    @Secured("hasRole('STUDENT')")
+    @Secured("hasAuthority('STUDENT')")
     public List<StudentServiceDto> getAll(String name, String surname, Integer age) {
         Specification<StudentEntity> spec = (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
